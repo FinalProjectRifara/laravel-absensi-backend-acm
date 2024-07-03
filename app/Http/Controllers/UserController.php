@@ -75,6 +75,7 @@ class UserController extends Controller
             'name' => 'required',
             'email' => 'required|email',
             'phone' => 'required',
+            'cuti' => 'required',
             'position' => 'required',
             'department' => 'required',
             'role' => 'required',
@@ -85,6 +86,7 @@ class UserController extends Controller
         $user->name = $request->name;
         $user->email = $request->email;
         $user->phone = $request->phone;
+        $user->cuti = $request->cuti;
         $user->position = $request->position;
         $user->department = $request->department;
         $user->role = $request->role;

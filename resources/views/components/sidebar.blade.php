@@ -41,6 +41,12 @@
                 </a>
             </li>
 
+            {{-- Sidebar Cuti --}}
+            <li class="nav-item">
+                <a href="{{ route('cutis.index') }}" class="nav-link"><i
+                        class="fas fa-fire"></i><span>Cuti Employe</span>
+                </a>
+            </li>
 
         </ul>
     </aside>

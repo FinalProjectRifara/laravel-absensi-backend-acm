@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AttendanceController;
 use App\Http\Controllers\CompanyController;
+use App\Http\Controllers\CutiController;
 use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -37,6 +38,9 @@ Route::middleware(['auth'])->group(function () {
 
     // Permission Controller
     Route::resource('permissions', PermissionController::class);
+
+    // Cuti Controller
+    Route::resource('cutis', CutiController::class);
 
 });
 

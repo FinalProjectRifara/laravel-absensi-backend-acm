@@ -28,7 +28,13 @@ class User extends Authenticatable
         'face_embedding',
         'image_url',
         'fcm_token',
+        'cuti',
     ];
+
+    // Relationship
+    public function cutis() {
+        return $this->hasMany(Cuti::class);
+    }
 
     /**
      * The attributes that should be hidden for serialization.

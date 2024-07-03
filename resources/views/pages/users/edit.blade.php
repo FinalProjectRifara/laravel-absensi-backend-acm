@@ -94,6 +94,12 @@
                                 <input type="number" class="form-control" name="phone" value="{{ $user->phone }}">
                             </div>
 
+                            {{-- Cuti --}}
+                            <div class="form-group">
+                                <label>Cuti</label>
+                                <input type="number" class="form-control" name="cuti" value="{{ $user->cuti }}">
+                            </div>
+
                             {{-- Position --}}
                             <div class="form-group">
                                 <label>Position</label>
