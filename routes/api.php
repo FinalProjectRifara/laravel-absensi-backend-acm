@@ -56,3 +56,6 @@ Route::post('/update-fcm-token', [App\Http\Controllers\Api\AuthController::class
 
 // Get attendance
 Route::get('/api-attendances', [App\Http\Controllers\Api\AttendanceController::class, 'index'])->middleware('auth:sanctum');
+
+// Get cuti by UserId
+Route::get('/api-get-cuti/{user_id}', [App\Http\Controllers\Api\CutiController::class, 'getCutiByUserId'])->middleware('auth:sanctum');

@@ -46,4 +46,19 @@ class CutiController extends Controller
             'data' => $cuti,
         ], 201);
     }
+
+    // Api Get Cuti by user_id
+    public function getCutiByUserId($user_id)
+    {
+        $cutis = Cuti::where('user_id', $user_id)->get();
+
+        if ($cutis->isEmpty()) {
+            return response()->json(['message' => 'No cuti found for this user'], 404);
+        }
+
+        return response()->json([
+            'message' => 'Cuti retrieved successfully',
+            'data' => $cutis,
+        ], 200);
+    }
 }
