@@ -7,12 +7,12 @@
             <li><a href="#"
                     data-toggle="sidebar"
                     class="nav-link nav-link-lg"><i class="fas fa-bars"></i></a></li>
-            <li><a href="#"
+            {{-- <li><a href="#"
                     data-toggle="search"
-                    class="nav-link nav-link-lg d-sm-none"><i class="fas fa-search"></i></a></li>
+                    class="nav-link nav-link-lg d-sm-none"><i class="fas fa-search"></i></a></li> --}}
         </ul>
 
-        <div class="search-element">
+        {{-- <div class="search-element">
             <input class="form-control"
                 type="search"
                 placeholder="Search"
@@ -91,12 +91,14 @@
                 </div>
             </div>
         </div>
+         --}}
     </form>
 
     <ul class="navbar-nav navbar-right">
 
         {{-- Profile --}}
-        <li class="dropdown"><a href="#"
+        <li class="dropdown">
+            <a href="#"
                 data-toggle="dropdown"
                 class="nav-link dropdown-toggle nav-link-lg nav-link-user">
                 <img alt="image"
@@ -105,14 +107,14 @@
                 <div class="d-sm-none d-lg-inline-block">Hi, {{ auth()->user()->name }}</div>
             </a>
             <div class="dropdown-menu dropdown-menu-right">
-                <a href="features-profile.html"
+                {{-- <a href="features-profile.html"
                     class="dropdown-item has-icon">
                     <i class="far fa-user"></i> Profile
                 </a>
 
                 <a href="features-settings.html"
                     class="dropdown-item has-icon">
-                    <i class="fas fa-cog"></i> Settings
+                    <i class="fas fa-cog"></i> Settings --}}
                 </a>
 
                 {{-- Btn Log Out --}}

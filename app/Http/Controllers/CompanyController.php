@@ -44,8 +44,8 @@ class CompanyController extends Controller
             'time_in' => $request->time_in,
             'time_out' => $request->time_out,
         ]);
-
-        return redirect()->route('companies.show', 1)->with('succeess', 'Company updated successfully');
+        return redirect()->route('companies.show', 1)->with('success', 'Company updated successfully.');
+        // return redirect()->route('companies.show', 1)->with('succeess', 'Company updated successfully.');
     }
 
 }

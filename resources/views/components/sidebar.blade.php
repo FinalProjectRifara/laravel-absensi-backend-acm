@@ -1,16 +1,17 @@
 <div class="main-sidebar sidebar-style-2">
     <aside id="sidebar-wrapper">
         <div class="sidebar-brand">
-            <a href="index.html">Stisla</a>
+            <a href="index.html">Admin Arif Cipta Mandiri</a>
         </div>
-        <div class="sidebar-brand sidebar-brand-sm">
+        {{-- <div class="sidebar-brand sidebar-brand-sm">
             <a href="index.html">St</a>
-        </div>
+        </div> --}}
         <ul class="sidebar-menu">
             <li class="menu-header">Menu</li>
 
+            {{-- Sidebar Dashboard --}}
             <li class="nav-item">
-                <a href="#" class="nav-link"><i class="fas fa-fire"></i><span>Dashboard</span>
+                <a href="home" class="nav-link"><i class="fas fa-fire"></i><span>Dashboard</span>
                 </a>
             </li>
 
@@ -35,11 +36,11 @@
             </li>
 
             {{-- Sidebar Permissions --}}
-            <li class="nav-item">
+            {{-- <li class="nav-item">
                 <a href="{{ route('permissions.index') }}" class="nav-link"><i
                         class="fas fa-fire"></i><span>Permissions</span>
                 </a>
-            </li>
+            </li> --}}
 
             {{-- Sidebar Cuti --}}
             <li class="nav-item">

@@ -22,23 +22,24 @@
                 </div>
             </div>
             <div class="section-body">
+
                 <div class="row">
                     <div class="col-12">
                         @include('layouts.alert')
                     </div>
                 </div>
+
                 <h2 class="section-title">Users</h2>
                 <p class="section-lead">
                     You can manage all Users, such as editing, deleting and more.
                 </p>
 
-
                 <div class="row mt-4">
                     <div class="col-12">
                         <div class="card">
-                            <div class="card-header">
+                            {{-- <div class="card-header">
                                 <h4>All Posts</h4>
-                            </div>
+                            </div> --}}
                             <div class="card-body">
 
                                 <div class="float-right">

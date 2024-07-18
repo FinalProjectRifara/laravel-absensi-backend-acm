@@ -23,9 +23,9 @@
             </div>
             <div class="section-body">
                 <div class="row">
-                    {{-- <div class="col-12">
+                    <div class="col-12">
                         @include('layouts.alert')
-                    </div> --}}
+                    </div>
                 </div>
                 <h2 class="section-title">Attendances</h2>
                 <p class="section-lead">
@@ -89,11 +89,11 @@
 
                                                 <td>
                                                     <div class="d-flex justify-content-center">
-                                                        <a href='{{ route('attendances.edit', $attendance->id) }}'
+                                                        {{-- <a href='{{ route('attendances.edit', $attendance->id) }}'
                                                             class="btn btn-sm btn-info btn-icon">
                                                             <i class="fas fa-edit"></i>
                                                             Edit
-                                                        </a>
+                                                        </a> --}}
 
                                                         <form action="{{ route('attendances.destroy', $attendance->id) }}"
                                                             method="POST" class="ml-2">
