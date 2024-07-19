@@ -6,6 +6,8 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Validator;
 
 class UserController extends Controller
 {
@@ -108,5 +110,35 @@ class UserController extends Controller
         $user->delete();
 
         return redirect()->route('users.index')->with('success', 'User deleted successfully.');
+    }
+
+    // Update Data
+    public function updateData(Request $request, $id)
+    {
+        // $user = Auth::user();
+        // $user = Auth::user()($id);
+
+        $data = $request->all();
+        $user = User::findOrFail($id);
+
+        $validator = Validator::make($data, [
+            'name' => 'sometimes|string|max:255',
+            'email' => 'sometimes|string|email|max:255|unique:users,email,' . $user->id,
+            'phone' => 'sometimes|string|max:18',
+            // 'address' => 'sometimes|string|max:200',
+            // 'roles' => 'sometimes|string',
+            // Tambahkan validasi lainnya sesuai kebutuhan
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json(['errors' => $validator->errors()], 422);
+        }
+
+        // $user->update($data);
+        $user->fill($request->only('name', 'email', 'phone',));
+        $user->save();
+        Log::info('User after update', ['user' => $user]);
+
+        return response()->json(['message' => 'User updated successfully', 'user' => $user]);
     }
 }

@@ -59,3 +59,6 @@ Route::get('/api-attendances', [App\Http\Controllers\Api\AttendanceController::c
 
 // Get cuti by UserId
 Route::get('/api-get-cuti/{user_id}', [App\Http\Controllers\Api\CutiController::class, 'getCutiByUserId'])->middleware('auth:sanctum');
+
+// Update Data User
+Route::middleware('auth:sanctum')->put('/user/{id}', [\App\Http\Controllers\UserController::class, 'updateData']);
