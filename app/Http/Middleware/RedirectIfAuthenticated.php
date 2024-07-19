@@ -21,6 +21,13 @@ class RedirectIfAuthenticated
 
         foreach ($guards as $guard) {
             if (Auth::guard($guard)->check()) {
+
+                $user = Auth::guard($guard)->user();
+                if ($user->role != 'admin' && $user->role != 'supervisor') {
+                    Auth::guard($guard)->logout();
+                    return redirect('/')->withErrors(['access' => 'Anda tidak memiliki akses.']);
+                }
+
                 return redirect(RouteServiceProvider::HOME);
             }
         }
