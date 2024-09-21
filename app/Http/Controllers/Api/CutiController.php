@@ -29,11 +29,11 @@ class CutiController extends Controller
         $cuti->reason = $request->reason;
         $cuti->is_approved = 0;
 
-        if ($request->hasFile('image')) {
-            $image = $request->file('image');
-            $image->storeAs('public/cuti', $image->hashName());
-            $cuti->image = $image->hashName();
-        }
+        // if ($request->hasFile('image')) {
+        //     $image = $request->file('image');
+        //     $image->storeAs('public/cuti', $image->hashName());
+        //     $cuti->image = $image->hashName();
+        // }
 
         $cuti->save();
 
