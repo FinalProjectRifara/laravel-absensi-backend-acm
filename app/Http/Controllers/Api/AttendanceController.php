@@ -21,7 +21,8 @@ class AttendanceController extends Controller
         $attendance = new Attendance;
         $attendance->user_id = $request->user()->id;
         $attendance->date = date('Y-m-d');
-        $attendance->time_in = date('H:i:s');
+        // $attendance->time_in = date('H:i:s');
+        $attendance->time_in = now()->format('H:i:s'); // Menggunakan now() untuk waktu dengan timezone yang diatur
         $attendance->latlong_in = $request->latitude . ',' . $request->longitude;
         $attendance->save();
 
@@ -51,7 +52,8 @@ class AttendanceController extends Controller
         }
 
         //save checkout
-        $attendance->time_out = date('H:i:s');
+        // $attendance->time_out = date('H:i:s');
+        $attendance->time_out = now()->format('H:i:s'); // Menggunakan now() untuk waktu checkout
         $attendance->latlong_out = $request->latitude . ',' . $request->longitude;
         $attendance->save();
 
@@ -89,7 +91,7 @@ class AttendanceController extends Controller
         if ($date) {
             $query->where('date', $date);
         }
-        
+
         $attendance = $query->get();
 
         return response([
