@@ -24,10 +24,11 @@
                         </div>
                         <div class="card-wrap">
                             <div class="card-header">
-                                <h4>Total Admin</h4>
+                                <h4>Total Staff</h4>
                             </div>
                             <div class="card-body">
-                                10
+                                {{-- 10 --}}
+                                {{ $totalStaff }}
                             </div>
                         </div>
                     </div>
@@ -35,15 +36,33 @@
 
                 <div class="col-lg-3 col-md-6 col-sm-6 col-12">
                     <div class="card card-statistic-1">
-                        <div class="card-icon bg-danger">
+                        <div class="card-icon bg-primary">
                             <i class="far fa-user"></i>
                         </div>
                         <div class="card-wrap">
                             <div class="card-header">
-                                <h4>Total Employee</h4>
+                                <h4>Total Admin</h4>
                             </div>
                             <div class="card-body">
-                                42
+                                {{-- 42 --}}
+                                {{ $totalAdmin }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                    <div class="card card-statistic-1">
+                        <div class="card-icon bg-primary">
+                            <i class="far fa-user"></i>
+                        </div>
+                        <div class="card-wrap">
+                            <div class="card-header">
+                                <h4>Total Supervisor</h4>
+                            </div>
+                            <div class="card-body">
+                                {{-- 42 --}}
+                                {{ $totalSupervisor }}
                             </div>
                         </div>
                     </div>

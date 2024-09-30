@@ -28,9 +28,11 @@ Route::post('login', [LoginController::class, 'login'])->name('login.post');
 Route::post('logout', [LoginController::class, 'logout'])->name('logout');
 
 Route::middleware(['auth'])->group(function () {
-    Route::get('home', function () {
-        return view('pages.dashboard', ['type_menu' => 'dashboard']);
-    })->name('home');
+    // Route::get('home', function () {
+    //     return view('pages.dashboard', ['type_menu' => 'dashboard']);
+    // })->name('home');
+
+    Route::get('home', [UserController::class, 'dashboard'])->name('home');
 
     // // User Controller
     // Route::resource('users', UserController::class);

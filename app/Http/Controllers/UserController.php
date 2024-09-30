@@ -141,4 +141,19 @@ class UserController extends Controller
 
         return response()->json(['message' => 'User updated successfully', 'user' => $user]);
     }
+
+    // Tambahkan ini di dalam controller yang menangani dashboard
+    public function dashboard()
+    {
+        // Hitung Total Staff
+        $totalStaff = User::where('role', 'staff')->count();
+
+        // Hitung total admin
+        $totalAdmin = User::where('role', 'admin')->count();
+
+        // Hitung total supervisor
+        $totalSupervisor = User::where('role', 'supervisor')->count();
+
+        return view('pages.dashboard', compact('totalStaff' , 'totalAdmin', 'totalSupervisor'));
+    }
 }
